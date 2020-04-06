@@ -6,7 +6,7 @@ app = Flask(__name__)
 def open_connection():
     connection = getattr(g,'_connection',None)
     Connection = None
-    Connection, g._connection = sqlite3.connect(PATH)
+    Connection = sqlite3.connect(PATH)
 @app.route('/')
 @app.route('/jobs')
 def jobs():
